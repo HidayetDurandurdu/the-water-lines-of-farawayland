@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Water Pipes of Farawayland</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="screen screen-start">
+      <div class="panel hero-panel">
+        <p class="eyebrow">JavaScript Home Assignment</p>
+        <h1>The Water Pipes of Farawayland</h1>
+        <p class="intro">
+          Rotate the pipes so the water can reach every consumer from the source.
+          The final network has to be connected, valid and cycle free.
+        </p>
+      </div>
+
+      <div class="panel form-panel">
+        <h2>Start Game</h2>
+        <label class="field">
+          <span>Player name</span>
+          <input class="player-name-input" type="text" maxlength="30" placeholder="Type your name">
+        </label>
+
+        <div class="field">
+          <span>Difficulty</span>
+          <div class="difficulty-list">
+            <label><input type="radio" name="difficulty" value="easy" checked> Easy</label>
+            <label><input type="radio" name="difficulty" value="medium"> Intermediate</label>
+            <label><input type="radio" name="difficulty" value="hard"> Hard</label>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button class="start-button">Start</button>
+          <button class="continue-button" type="button">Continue saved game</button>
+          <button class="rules-button" type="button">Show rules</button>
+        </div>
+        <p class="menu-message"></p>
+      </div>
+
+      <div class="panel rules-panel hidden">
+        <h2>Rules</h2>
+        <ul>
+          <li>Rotate pipes with clicks.</li>
+          <li>Water must reach every consumer.</li>
+          <li>All pipe ends must connect properly.</li>
+          <li>The full pipe network must stay in one component.</li>
+          <li>The final network cannot contain cycles.</li>
+        </ul>
+      </div>
+
+      <div class="panel leaderboard-panel">
+        <div class="panel-head">
+          <h2>Leaderboard</h2>
+          <button class="clear-ranking-button" type="button">Clear</button>
+        </div>
+        <ol class="leaderboard-list"></ol>
+      </div>
+    </section>
+
+    <section class="screen screen-game hidden">
+      <div class="game-top panel">
+        <div class="game-meta">
+          <div>
+            <span class="meta-label">Player</span>
+            <strong class="player-name-value">-</strong>
+          </div>
+          <div>
+            <span class="meta-label">Difficulty</span>
+            <strong class="difficulty-value">-</strong>
+          </div>
+          <div>
+            <span class="meta-label">Time</span>
+            <strong class="time-value">00:00</strong>
+          </div>
+        </div>
+        <div class="button-row">
+          <button class="save-button" type="button">Save progress</button>
+          <button class="menu-button" type="button">Save and quit</button>
+        </div>
+      </div>
+
+      <div class="status-row">
+        <p class="status-message panel">Water is waiting at the source.</p>
+      </div>
+
+      <div class="panel game-over-panel hidden">
+        <h2>Game Over</h2>
+        <p class="game-over-text">You solved the puzzle.</p>
+        <div class="button-row">
+          <button class="game-over-menu-button" type="button">Return to main menu</button>
+        </div>
+      </div>
+
+      <div class="board-wrap panel">
+        <div class="board"></div>
+      </div>
+
+      <div class="panel legend-panel">
+        <h2>Legend</h2>
+        <div class="legend-items">
+          <div><span class="legend-swatch legend-dry"></span> Dry pipe</div>
+          <div><span class="legend-swatch legend-wet"></span> Pipe with water</div>
+          <div><span class="legend-swatch legend-source"></span> Source</div>
+          <div><span class="legend-swatch legend-consumer"></span> Consumer</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
